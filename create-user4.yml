@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  vars_files:
+    - vars/user.yml
+
+  tasks:
+  - name: Creare User {{ user }}
+    ansible.builtin.user:
+      name: "{{ user }}"
+      state: present
